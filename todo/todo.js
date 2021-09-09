@@ -1,5 +1,5 @@
 import { renderTodos } from '../render/render.js';
-import { getUser, setUser, getTodos, setTodos, addTodo } from '../utils/local-storage.js';
+import { getTodos, setTodos, addTodo } from '../utils/local-storage.js';
 
 const addBtnEl = document.querySelector('#add-btn');
 const formEl = document.querySelector('form');
@@ -11,7 +11,6 @@ const allLiEl = document.querySelectorAll('li');
 allLiEl.forEach(li => {
     li.addEventListener('click', () => {
         const currentTodo = todos.find(({ id }) => id === li.value);
-        console.log(currentTodo);
         currentTodo.completed = true;
         setTodos(todos);
         renderTodos();
