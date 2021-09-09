@@ -15,4 +15,6 @@ formEl.addEventListener('submit', (e) => {
 
     setUser(user);
 
+    window.location = '../todo/index.html';
+
 });

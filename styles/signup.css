@@ -10,14 +10,17 @@ main {
 }
 
 .sign-up {
-    background-image: url(../assets/signIn.jpg);
+    background-image: url(../assets/sign-up.jpg);
 }
 
 .log-in {
-    background-image: url(../assets/login.jpg);
+    background-image: url(../assets/log-in.jpg);
 }
 
 label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
     margin: 20px;
     font-size: 1.3rem;
@@ -31,7 +34,7 @@ form {
     align-items: center;
     width: 20em;
     height: 20em;
-    background-color: rgba(70, 65, 65, 0.637);
+    background-color: rgba(70, 65, 65, 0.774);
     border-radius: 10px;
 }
 
@@ -46,18 +49,24 @@ form {
 button {
     font-size: 20px;
     width: 8rem;
-    border: none;
+    border: white solid 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.596);
     border-radius: 10px;
     cursor: pointer;
     transition: .2s all ease-in-out;
 }
 
+input {
+    margin-top: 10px;
+    font-size: 20px;
+}
 #create-btn:hover {
-    background-color: rgba(194, 45, 85, 0.582);
+    background-color: rgba(54, 92, 118, 0.822);
 }
 
 #submit-btn:hover {
-    background-color: rgb(248, 205, 115, 0.582);
+    background-color: rgba(47, 53, 8, 0.534);
 }
 
 .error-message {

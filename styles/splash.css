@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-image: url(../assets/thingsToDo.jpg);
+    background-image: url(../assets/splash.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -17,9 +17,9 @@
 }
 
 button {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.699);
-    border: rgb(32	186	176	) 10px solid;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.432);
+    border: white 10px solid;
     width: 200px;
     height: 100px;
     border-radius: 10px;

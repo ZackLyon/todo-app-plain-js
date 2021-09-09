@@ -1,9 +1,11 @@
-/* add home page styles here */
 
-*{
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+* {
     box-sizing: border-box;
     margin: 0;
 	padding: 0;
+    font-family: 'ZCOOL KuaiLe', cursive;
 }
 
 html, body {
@@ -19,4 +21,25 @@ main {
 
 .hidden {
     display: none;
+}
+
+input[type=text] {
+    text-indent: 5px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+input[type=text]:focus {
+    background-color: rgba(255, 255, 255, 0.644);
+    border: none;
+}
+
+footer {
+    color: white;
+    background-color: black;
+}
+
+footer > a {
+    color: darkgreen;
 }

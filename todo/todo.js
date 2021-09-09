@@ -3,19 +3,9 @@ import { getTodos, setTodos, addTodo } from '../utils/local-storage.js';
 
 const addBtnEl = document.querySelector('#add-btn');
 const formEl = document.querySelector('form');
-const todos = getTodos();
 
 renderTodos();
-
-const allLiEl = document.querySelectorAll('li');
-allLiEl.forEach(li => {
-    li.addEventListener('click', () => {
-        const currentTodo = todos.find(({ id }) => id === li.value);
-        currentTodo.completed = true;
-        setTodos(todos);
-        renderTodos();
-    });
-});
+clickableLi();
 
 addBtnEl.addEventListener('click', ()=> {
     
@@ -37,4 +27,20 @@ formEl.addEventListener('submit', (e) => {
     formEl.reset();
 
     renderTodos();
+    clickableLi();
 });
+
+function clickableLi(){
+    const allLiEl = document.querySelectorAll('li');
+    const todos = getTodos();
+  
+    allLiEl.forEach(li => {
+        li.addEventListener('click', () => {
+            const currentTodo = todos.find(({ id }) => id === li.value);
+            currentTodo.completed = true;
+            setTodos(todos);
+            renderTodos(); //after click, render again
+            clickableLi(); //make sure all new renders are clickable
+        });
+    });
+}
