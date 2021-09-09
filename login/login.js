@@ -18,7 +18,7 @@ formEl.addEventListener('submit', (e) => {
 
         setTimeout(() => {
             errorMessageEl.classList.add('hidden');
-        }, 800);
+        }, 900);
     }
 
 });
