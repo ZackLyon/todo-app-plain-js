@@ -1,6 +1,9 @@
 import { getUser } from '../utils/local-storage.js';
 
 const formEl = document.querySelector('form');
+const usernameInput = document.querySelector('[name="username"]');
+usernameInput.focus();
+
 const user = getUser();
 
 formEl.addEventListener('submit', (e) => {
