@@ -13,6 +13,7 @@ main {
     width: 100px;
     padding: 0;
     font-size: 60px;
+    outline: none;
 }
 
 form, #add-btn {
