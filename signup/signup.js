@@ -1,6 +1,8 @@
 import { setUser } from '../utils/local-storage.js';
 
 const formEl = document.querySelector('form');
+const usernameInput = document.querySelector('[name="username"]');
+usernameInput.focus();
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();

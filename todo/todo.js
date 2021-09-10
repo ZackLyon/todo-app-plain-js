@@ -1,17 +1,20 @@
-import { renderTodos } from '../render/render.js';
-import { getTodos, setTodos, addTodo } from '../utils/local-storage.js';
+import { renderClickableTodo } from '../render/render.js';
+import { addTodo } from '../utils/local-storage.js';
 
 const addBtnEl = document.querySelector('#add-btn');
 const formEl = document.querySelector('form');
 
-renderTodos();
-clickableLi();
+renderClickableTodo();
+
+addBtnEl.focus(); // focus add button so enter key activates it
 
 addBtnEl.addEventListener('click', ()=> {
     
     addBtnEl.classList.add('hidden');
     formEl.classList.remove('hidden');
-    
+
+    const messageInput = document.querySelector('#message-input');
+    messageInput.focus(); //make form ready to type in immediately
 });
 
 formEl.addEventListener('submit', (e) => {
@@ -25,22 +28,7 @@ formEl.addEventListener('submit', (e) => {
     formEl.classList.add('hidden');
     addBtnEl.classList.remove('hidden');
     formEl.reset();
-
-    renderTodos();
-    clickableLi();
-});
-
-function clickableLi(){
-    const allLiEl = document.querySelectorAll('li');
-    const todos = getTodos();
   
-    allLiEl.forEach(li => {
-        li.addEventListener('click', () => {
-            const currentTodo = todos.find(({ id }) => id === li.value);
-            currentTodo.completed = true;
-            setTodos(todos);
-            renderTodos(); //after click, render again
-            clickableLi(); //make sure all new renders are clickable
-        });
-    });
-}
+    renderClickableTodo();
+    addBtnEl.focus();
+});

@@ -1,5 +1,5 @@
-export { renderTodos };
-import { getTodos } from '../utils/local-storage.js';
+export { renderClickableTodo };
+import { getTodos, setTodos } from '../utils/local-storage.js';
 
 function renderTodos(){
     const todos = getTodos();
@@ -18,4 +18,24 @@ function renderTodos(){
         
         todoContainer.append(li);
     });
+}
+
+function clickableLi(){
+    const allLiEl = document.querySelectorAll('li');
+    const todos = getTodos();
+  
+    allLiEl.forEach(li => {
+        li.addEventListener('click', () => {
+            const currentTodo = todos.find(({ id }) => id === li.value);
+            currentTodo.completed = true;
+            setTodos(todos);
+
+            renderClickableTodo(); //render all again after marking a todo done
+        });
+    });
+}
+
+function renderClickableTodo(){
+    renderTodos(); 
+    clickableLi(); 
 }
