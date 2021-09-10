@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/todo.css">
+    <title>Todo Page</title>
+</head>
+
+<body>
+    <main>
+        <button id="add-btn">+</button>
+        <form class="hidden">
+            <label>
+                Add todo: <input id="message-input" name="message" type="text">
+            </label>
+            <button id="submit-btn">+</button>
+        </form>
+        <section class="main-section">
+            <ul id="todo-container"></ul>
+        </section>
+    </main>
+    <footer>
+        Photo by <a href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena Sergienko</a> on <a href="https://unsplash.com/s/photos/woods?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </footer>
+
+    <script type="module" src="./todo.js"></script>
+    <script type="module" src="../render/render.js"></script>
+</body>
+
+</html>

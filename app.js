@@ -1,8 +1,7 @@
-// import functions and grab DOM elements
+import { getUser } from './utils/local-storage.js';
+const user = getUser();
+const logIn = document.querySelector('#log-in');
 
-// initialize global state
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+if (user) {
+    logIn.classList.remove('hidden');
+}
